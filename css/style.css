@@ -12,6 +12,17 @@ html {
 
 :root {
     --index: 1vh + 1vw;
+    --bkg-color: #10141F;
+    --main-text-color: #fff;
+    --text-color: #fff;
+    --header-bkg-color: rgba(0, 0, 0, 0.3);
+    --border-color: rgba(203, 208, 219, 0.2);
+    --text-selected: #2765E0;
+    --card-border: rgba(255, 255, 255, 0.3);
+    --card-bkg: linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%); 
+    --card-filter: drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(1) brightness(0.3);
+    --check-color: linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%);
+    --shapes-blend: hard-light;
 }
 
 *::-webkit-scrollbar {
@@ -24,16 +35,16 @@ html {
 }
 
 *::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00c6fb, #005bea);
+    background: linear-gradient(180deg, #00c6fb, var(--text-selected));
 }
 
 a {
-    color: #fff;
+    color: var(--text-color);
     font-family: sans-serif;
 }
 
 .selected {
-    color: #2765E0;
+    color: var(--text-selected);
 }
 
 .flex {
@@ -57,13 +68,13 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #10141F;
-    color: #fff;
+    background-color: var(--bkg-color);
+    color: var(--text-color);
     display: none;
 }
 
 .container {
-    max-width: 1083px;
+    max-width: 1084px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -73,8 +84,8 @@ body {
 .header {
     position: relative;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(203, 208, 219, 0.2);
-    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--header-bkg-color);
 }
 
 .header__navbar {
@@ -114,10 +125,10 @@ body {
 }
 
 .navbar__nav-links .button {
-    background-color: #2765E0;
+    background-color: var(--text-selected);
     padding: 15px 38px;
     border-radius: 10px;
-    color: #fff;
+    color: var(--main-text-color);
 }
 
 .nav-links__darktheme {
@@ -147,7 +158,7 @@ body {
     right: 0;
     bottom: 0;
     background-color: transparent;
-    border: 1px solid #2765E0;
+    border: 1px solid var(--text-selected);
     transition: 0.4s;
 }
 
@@ -158,7 +169,7 @@ body {
     width: 14px;
     left: 3px;
     bottom: 2px;
-    background-color: #2765E0;
+    background-color: var(--text-selected);
     transition: 0.4s;
 }
 
@@ -205,6 +216,7 @@ body {
 .section__headers_h1 {
     font-size: 64px;
     letter-spacing: 2px;
+    line-height: 1;
     text-align: center;
 }
 
@@ -242,7 +254,7 @@ body {
     padding: 20px 40px;
     backdrop-filter: blur(10px);
     z-index: 1;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
 }
 
@@ -277,12 +289,15 @@ body {
     right: 0;
     bottom: 0;
     background: inherit;
-    filter: drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(1) brightness(0.3);
+    filter: var(--card-filter);
     z-index: -1;
 }
 
-.card__header_h5 {
+.card__headers_h5, .card__header_h5{
     font-size: 24px;
+}
+.card__header_h5 {
+    font-weight: 100;
 }
 
 .card__column {
@@ -292,7 +307,7 @@ body {
 .card__input {
     position: relative;
     display: flex;
-    border: 1px solid rgba(203, 208, 219, 0.8);
+    border: 1px solid var(--card-border);
     border-radius: 8px;
     padding: 10px;
     align-items: center;
@@ -318,7 +333,7 @@ body {
     font-size: 24px;
     background: unset;
     border: unset;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .currency__custom-select select:after {
@@ -329,12 +344,12 @@ body {
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
+    border-color: var(--text-color) transparent transparent transparent;
     font-weight: 100;
 }
 
 .select-selected {
-    background-color: DodgerBlue;
+    background-color: var(--text-selected);
 }
 
 .select-selected:after {
@@ -346,11 +361,11 @@ body {
     width: 0%;
     height: 0px;
     border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
+    border-color: var(--text-color) transparent transparent transparent;
 }
 
 .select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
+    border-color: transparent transparent var(--text-color) transparent;
     top: 7px;
 }
 
@@ -363,12 +378,12 @@ body {
     font-size: 24px;
     background: unset;
     border: unset;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .select-items {
     position: absolute;
-    background-color: DodgerBlue;
+    background-color: var(--text-selected);
     top: 100%;
     left: 0;
     right: 0;
@@ -398,20 +413,20 @@ body {
 .card__transparent-input {
     width: 100%;
     padding: 24px 8px;
-    border: 1px solid white;
+    border: 1px solid var(--card-border);
     border-radius: 8px;
     background: transparent;
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     margin-top: 20px;
 }
 
 .card__transparent-input::placeholder {
-    color: #fff;
+    color: var(--text-color);
 }
 
 .card__transparent-input:focus {
-    color: #fff;
+    color: var(--text-color);
     font-size: 16px;
 }
 
@@ -426,9 +441,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--text-color);
     font-size: 16px;
-    border: 5px solid #2765E0;
+    border: 3px solid var(--text-selected);
 }
 
 .card__inputs,
@@ -449,7 +464,7 @@ body {
 }
 
 .card__link {
-    color: #2765E0;
+    color: var(--text-selected);
 }
 
 .card__buttons {
@@ -457,13 +472,14 @@ body {
 }
 
 .card__button {
-    background-color: #2765E0;
+    background-color: var(--text-selected);
     font-weight: 500;
     font-size: 20px;
     padding: 15px 0px;
     text-align: center;
     border-radius: 8px;
     width: 100%;
+    color: var(--main-text-color);
 }
 
 .card__buttons .checkbox {
@@ -506,7 +522,7 @@ body {
 }
 
 .card__buttons .checkbox input:checked~.checkmark {
-    background-color: #2765E0;
+    background-color: var(--text-selected);
 }
 
 .checkmark:after {
@@ -524,7 +540,7 @@ body {
     top: 2px;
     width: 10px;
     height: 17px;
-    border: solid white;
+    border: solid var(--main-text-color);
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -549,6 +565,11 @@ body {
 .section-1__blur4,
 .section-1__blur5 {
     top: 28%
+}
+
+.section__list .section__checked  {
+    background-color: var(--check-color);
+    border-radius: 16px;
 }
 
 .section__headers .button-1{
@@ -577,8 +598,8 @@ body {
 }
 
 .card-4 {
-    background: linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--card-bkg);
+    border: 1px solid var(--card-border);
     padding: 25px;
     text-align: center;
     border-radius: 16px;
@@ -613,7 +634,7 @@ body {
 }
 
 .section__list_span {
-    color: #2765E0;
+    color: var(--text-selected);
     font-weight: 900;
     font-size: 16px;
     filter: saturate(2) contrast(3) brightness(2);
@@ -668,7 +689,7 @@ body {
     padding: 25px 20px;
     flex-direction: column;
     justify-content: unset;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     backdrop-filter: blur(10px);
     z-index: 1;
@@ -764,7 +785,7 @@ body {
 
 .card__button-update {
     background: unset;
-    border: 1px solid #2765E0;
+    border: 1px solid var(--text-selected);
     margin-top: 60px;
     width: 80%;
     margin: 60px auto;
@@ -792,7 +813,7 @@ body {
 .footer {
     position: relative;
     padding: 60px 0;
-    border-top: 1px solid rgba(203, 208, 219, 0.2);
+    border-top: 1px solid var(--border-color);
 }
 
 .footer__content {
@@ -814,7 +835,7 @@ body {
 
 .footer__information_a {
     font-size: 14px;
-    color: #2765E0;
+    color: var(--text-selected) !important;
     text-decoration: underline;
     line-height: 30px;
 }
@@ -877,11 +898,14 @@ body {
     height: 100vh;
     width: 100%;
     max-width: 550px;
-    mix-blend-mode: hard-light;
+    mix-blend-mode: var(--shapes-blend);
     opacity: 1;
 }
 
 .section__blurs {
     position: absolute;
     opacity: 0.7;
+}
+@media only screen and (min-width: 1920px) {
+    .container {max-width: 1300px;}
 }

@@ -109,7 +109,7 @@
                     <div class="section__window flex">
                         <div class="window__card card-1">
                             <div class="card__header">
-                                <h5 class="card__header_h5">Отдаете</h5>
+                                <h5 class="card__headers_h5">Отдаете</h5>
                             </div>
                             <div class="card__column">
                                 <div class="card__input">
@@ -139,7 +139,7 @@
                         </div>
                         <div class="window__card card-2">
                             <div class="card__header">
-                                <h5 class="card__header_h5">Получаете</h5>
+                                <h5 class="card__headers_h5">Получаете</h5>
                             </div>
                             <div class="card__column">
                                 <div class="card__input">
@@ -175,7 +175,7 @@
                             </div>
                             <div class="window__body">
                                 <div class="card__header card__header_bottom">
-                                    <h5 class="card__header_h5">Ввод данных</h5>
+                                    <h5 class="card__headers_h5">Ввод данных</h5>
                                 </div>
                                 <div class="relatives">
                                     <input type="text" class="card__input card__transparent-input"
@@ -304,14 +304,14 @@
                                 <p class="section__list_p">Выберите интересующую вас валюту и сумму, которую хотите
                                     обменять.</p>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                         <div class="section__list">
                             <div class="section__list-group"><span class="section__list_span">2</span>
                                 <p class="section__list_p">Заполните все необходимые данные: номер карты и вашу почту.
                                 </p>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                         <div class="section__list">
                             <div class="section__list-group">
@@ -319,17 +319,17 @@
                                     <p class="section__list_p">Трейдер обработает вашу заявку в течение 15 мин.</p>
                                 </div>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                         <div class="section__list">
                             <div class="section__list-group"><span class="section__list_span">4</span>
                                 <p class="section__list_p">Следуйте дальнейшим инстуркциям.</p>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                     </div>
                 </div>
-                <div class="section__card window__card card-4">
+                <div class="section__card card-4">
                     <h5 class="section__card_h5">В офисе</h5>
                     <div class="section__lists">
                         <div class="section__list">
@@ -337,7 +337,7 @@
                                 <p class="section__list_p">Выберите интересующую вас валюту и сумму, которую хотите
                                     обменять.</p>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                         <div class="section__list">
                             <div class="section__list-group"><span class="section__list_span">2</span>
@@ -345,19 +345,19 @@
                                     ФИО и номер телефона.
                                 </p>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                         <div class="section__list">
                             <div class="section__list-group"><span class="section__list_span">3</span>
                                 <p class="section__list_p">Мы с вами свяжемся в течение 15 мин.</p>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                         <div class="section__list">
                             <div class="section__list-group"><span class="section__list_span">4</span>
                                 <p class="section__list_p">Приходите в офис для обмена.</p>
                             </div>
-                            <img src="/assets/checked.svg" width="32" height="32" />
+                            <img src="/assets/checked.svg" width="32" height="32" class="section__checked" />
                         </div>
                     </div>
                 </div>
@@ -758,12 +758,14 @@
     </footer>
     <script>
         const body = document.body;
-        const a = document.a;
+        const a = document.select;
         const shapes = document.getElementsByClassName('shapes');
         const checkbox = document.getElementById('themeToggle');
         const header = document.getElementsByClassName('header');
         const links = document.querySelectorAll('a');
-        const button = document.getElementsByClassName('card__button')
+        const button = document.getElementsByClassName('card__button');
+        const window_card = document.getElementsByClassName('window__card');
+        const card__button = document.getElementsByClassName('card__button-update');
 
         function isMobile() {
             return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -776,32 +778,28 @@
         checkbox.checked = true;
         function changeTheme() {
             if (checkbox.checked) {
-                body.style.backgroundColor = '#10141F';
-                body.style.color = '#F4F5F7';
-                header[0].style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
-                for (let i = 0; i < shapes.length; i++) {
-                    shapes[i].style.mixBlendMode = 'hard-light';
-                }
-                links.forEach(link => {
-                    link.style.color = '#fff';
-                });
-                button.forEach(btn => {
-                    btn.style.color = '#fff';
-                });
+                document.documentElement.style.setProperty('--bkg-color', '#10141F');
+                document.documentElement.style.setProperty('--text-color', '#fff');
+                document.documentElement.style.setProperty('--header-bkg-color', 'rgba(0, 0, 0, 0.3)');
+                document.documentElement.style.setProperty('--border-color', 'rgba(203, 208, 219, 0.2)');
+                document.documentElement.style.setProperty('--card-border', 'rgba(255, 255, 255, 0.3)');
+                document.documentElement.style.setProperty('--card-bkg', 'linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%)');
+                document.documentElement.style.setProperty('--check-color', 'linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%)');
+                document.documentElement.style.setProperty('--card-filter', 'drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(1) brightness(0.3)');
+                document.documentElement.style.setProperty('--shapes-blend', 'hard-light');
+                card__button[0].style.color = '#fff';
+
             } else {
-                alert('Светлая тема в разработке...');
-                body.style.backgroundColor = '#fff';
-                body.style.color = '#000';
-                for (let i = 0; i < shapes.length; i++) {
-                    shapes[i].style.mixBlendMode = 'unset';
-                }
-                header[0].style.backgroundColor = '#CBD0DB';
-                links.forEach(link => {
-                    link.style.color = '#000';
-                });
-                button.forEach(btn => {
-                    btn.style.color = '#fff';
-                });
+                document.documentElement.style.setProperty('--bkg-color', '#F4F5F7');
+                document.documentElement.style.setProperty('--text-color', '#000');
+                document.documentElement.style.setProperty('--header-bkg-color', 'rgba(255, 255, 255, 0.5)');
+                document.documentElement.style.setProperty('--border-color', '#CBD0DB');
+                document.documentElement.style.setProperty('--card-border', '#CBD0DB');
+                document.documentElement.style.setProperty('--card-bkg', 'rgba(255, 255, 255, 0.5)');
+                document.documentElement.style.setProperty('--check-color', 'rgba(39, 101, 224, 0.8)');
+                document.documentElement.style.setProperty('--card-filter', 'drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(0) brightness(2)');
+                document.documentElement.style.setProperty('--shapes-blend', 'unset');
+                card__button[0].style.color = '#2765E0';
             }
         }
     </script>
