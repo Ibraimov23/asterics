@@ -50,6 +50,10 @@ a {
 .flex {
     display: flex;
 }
+.align {
+    display: flex;
+    align-items: center;
+}
 
 .relatives {
     position: relative;
@@ -227,6 +231,8 @@ body {
 }
 
 .section__windows {
+    position: relative;
+    display: flex;
     padding: 40px 24px;
 }
 
@@ -243,6 +249,10 @@ body {
 
 .section__window .card-2 {
     background-image: url(/assets/window-2.svg);
+}
+
+.card-1 .card__header, .card-2 .card__header {
+    padding-bottom: 10px;
 }
 
 .section__window .card-3 {
@@ -262,7 +272,7 @@ body {
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 74px;
+    bottom: 114px;
 }
 
 .window__setting_button {
@@ -276,9 +286,8 @@ body {
     background-position: center;
     border-radius: 8px;
     text-align: left;
-    padding: 40px 40px 40px 40px;
+    padding: 40px 30px;
     min-height: 240px;
-    min-width: 381px;
 }
 
 .window__card::before {
@@ -301,7 +310,7 @@ body {
 }
 
 .card__column {
-    padding-top: 38px;
+    position: relative;
 }
 
 .card__input {
@@ -322,6 +331,7 @@ body {
 
 .card__description_p {
     font-size: 12px;
+    padding-left: 5px;
 }
 
 .currency__custom-select {
@@ -329,14 +339,15 @@ body {
     align-items: center;
 }
 
-.currency__custom-select select {
+.card__logo select {
     font-size: 24px;
-    background: unset;
+    background-color: unset;
     border: unset;
     color: var(--text-color);
+    outline: none;
 }
 
-.currency__custom-select select:after {
+.card__logo select:after {
     position: absolute;
     content: "";
     top: 10px;
@@ -365,7 +376,7 @@ body {
 }
 
 .select-selected.select-arrow-active:after {
-    border-color: transparent transparent var(--text-color) transparent;
+    border-color: unset;
     top: 7px;
 }
 
@@ -410,22 +421,34 @@ body {
     font-size: 16px;
 }
 
-.card__transparent-input {
+
+.card__transparent-input1,  .card__transparent-input2{
     width: 100%;
-    padding: 24px 8px;
     border: 1px solid var(--card-border);
     border-radius: 8px;
     background: transparent;
     color: var(--text-color);
-    font-size: 16px;
     margin-top: 20px;
 }
 
-.card__transparent-input::placeholder {
+.card__transparent-input1 {
+    padding: 16px 8px;
+    font-size: 24px;
+}
+.card__transparent-input2 {
+    padding: 26px 8px;
+    font-size: 16px;
+}
+
+.card__transparent-input1::placeholder,  .card__transparent-input2::placeholder{
     color: var(--text-color);
 }
 
-.card__transparent-input:focus {
+.card__transparent-input1:focus {
+    color: var(--text-color);
+    font-size: 24px;
+}
+.card__transparent-input2:focus {
     color: var(--text-color);
     font-size: 16px;
 }
@@ -453,9 +476,14 @@ body {
     gap: 20px;
 }
 
-.card__logo {
+.card__column .card__logo {
     position: absolute;
-    top: 40px;
+    top: 18px;
+    right: 8px;
+}
+.relatives .card__logo {
+    position: absolute;
+    bottom: 23px;
     right: 8px;
 }
 
@@ -677,6 +705,11 @@ body {
 .section__desciption_p {
     font-size: 16px;
     padding-top: 20px;
+    line-height: 120%;
+}
+
+.section__desciption-address_p {
+    font-size: 20px;
 }
 
 .section__lists-update {
@@ -729,6 +762,7 @@ body {
 
 .section__desciption_p-update {
     font-size: 16px;
+    line-height: 120%;
 }
 
 .section__list_icon {
@@ -877,7 +911,7 @@ body {
     bottom: 0;
     right: 0;
     top: 40em;
-    width: 40vh !important;
+    width: 40vh;
 }
 
 .shape-3 {
@@ -908,4 +942,36 @@ body {
 }
 @media only screen and (min-width: 1920px) {
     .container {max-width: 1300px;}
+}
+@media only screen and (max-width: 1100px) {
+    .container {max-width: 950px;}
+}
+@media only screen and (max-width: 900px) {
+    .container {max-width: 688px;}
+    .header{padding: 20px;}
+    .navbar__logo img {height: 80px;width: 237px;}
+    .navbar__link-indents, .nav-links__darktheme, .navbar__button-indents .register{display: none;}
+    .section{padding: 35px 0px 115px;}
+    .section__headers_h1{font-size: 48px;}
+    .section__contentrow {flex-direction: column;}
+    .section__lists-update{flex-wrap: wrap;}
+    .section__list-update{flex: 0 1 calc(50% - 20px);}
+    .section__lists-update #element-1 {flex: 0 0 97.5%;}
+    #element-1 .section__desciption_h6 br, #element-1 .section__desciption_p br {display: none;}
+    .footer{padding: 40px 0px;}
+    .footer__information img{width: 284px;height: 93px;}
+    .footer__links{flex-direction: column;}
+    .footer__navlinks_a{padding-bottom: 10px;}
+    .footer__information-texts{flex-direction: column;align-items: unset;padding-top: 0px;}
+    .footer__content{align-items: center;align-items: end;}
+    .card__button-footer {padding: 15px 60px;}
+    .footer-pcbutton {display: none;}
+    .footer-mbbutton {display: block;}
+    .shapes{height: 90vh; opacity: 0.7;}
+    .shape-2{width: 45vh;}
+    .section-2__blur1{left: 10%;}
+}
+@media only screen and (min-width: 900px) {
+    .footer-pcbutton {display: block;}
+    .footer-mbbutton {display: none;}
 }

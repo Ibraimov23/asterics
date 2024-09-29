@@ -30,7 +30,7 @@
                     <img class="navbar__logo_img" src="assets/logo.svg" alt="Логотип сайта">
                 </div>
                 <div class="navbar__nav-links navbar__button-indents">
-                    <a href="#home" class="navbar__nav-links_a">Регистрация</a>
+                    <a href="#home" class="navbar__nav-links_a register">Регистрация</a>
                     <a href="#about" class="navbar__nav-links_a button" id="button">Войти</a>
                     <div class="nav-links__darktheme" aria-label="Theme switcher">
                         <img src="/assets/darkicon.svg" width="17" height="17" alt="Темная тема">
@@ -112,49 +112,40 @@
                                 <h5 class="card__headers_h5">Отдаете</h5>
                             </div>
                             <div class="card__column">
-                                <div class="card__input">
-                                    <div class="card__headers">
-                                        <h5 class="card__header_h5">0,00016926</h5>
-                                    </div>
-                                    <div class="card__currency">
-                                        <div class="currency__custom-select">
-                                            <img src="/assets/btc.svg" width="24" height="24" />
-                                            <select>
-                                                <option value="0">BTC</option>
-                                                <option value="1">TON</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card__descriptions">
-                                    <p class="card__description_p">от 0,00016926 до 10</p>
-                                    <p class="card__description_p">Bitcoin</p>
+                                <input type="text" class="card__input card__transparent-input1"
+                                    placeholder="0,00016926">
+                                <div class="card__logo align">
+                                    <img src="/assets/btc.svg" width="24" height="24" />
+                                    <select>
+                                        <option value="0">BTC</option>
+                                        <option value="1">USD</option>
+                                    </select>
                                 </div>
                             </div>
+                            <div class="card__descriptions">
+                                <p class="card__description_p">от 0,00016926 до 10</p>
+                                <p class="card__description_p">Bitcoin</p>
+                            </div>
                         </div>
-                        <div class="window__setting">
-                            <a class="window__setting_button"><img src="/assets/icon-exchange.svg" width="60"
-                                    height="60" />
-                            </a>
-                        </div>
+                    </div>
+                    <div class="window__setting">
+                        <a class="window__setting_button"><img src="/assets/icon-exchange.svg" width="60" height="60" />
+                        </a>
+                    </div>
+                    <div class="section__window flex">
                         <div class="window__card card-2">
                             <div class="card__header">
                                 <h5 class="card__headers_h5">Получаете</h5>
                             </div>
                             <div class="card__column">
-                                <div class="card__input">
-                                    <div class="card__headers">
-                                        <h5 class="card__header_h5">1000</h5>
-                                    </div>
-                                    <div class="card__currency">
-                                        <div class="currency__custom-select">
-                                            <img src="/assets/sber.svg" width="24" height="24" />
-                                            <select>
-                                                <option value="0">RUB</option>
-                                                <option value="1">USD</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <input type="text" class="card__input card__transparent-input1"
+                                    placeholder="1000">
+                                <div class="card__logo align">
+                                    <img src="/assets/sber.svg" width="24" height="24" />
+                                    <select>
+                                        <option value="0">RUB</option>
+                                        <option value="1">USD</option>
+                                    </select>
                                 </div>
                                 <div class="card__descriptions">
                                     <p class="card__description_p">от 1000 до 3000</p>
@@ -163,55 +154,55 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section__window">
-                        <div class="window__card card-3">
-                            <div class="window__navbar">
-                                <div class="window-navbar__online">
-                                    <p class="window-navbar__text">Онлайн</p>
-                                </div>
-                                <div class="window-navbar__offline">
-                                    <p class="window-navbar__text">В офисе</p>
-                                </div>
+                </div>
+                <div class="section__window">
+                    <div class="window__card card-3">
+                        <div class="window__navbar">
+                            <div class="window-navbar__online">
+                                <p class="window-navbar__text">Онлайн</p>
                             </div>
-                            <div class="window__body">
-                                <div class="card__header card__header_bottom">
-                                    <h5 class="card__headers_h5">Ввод данных</h5>
+                            <div class="window-navbar__offline">
+                                <p class="window-navbar__text">В офисе</p>
+                            </div>
+                        </div>
+                        <div class="window__body">
+                            <div class="card__header card__header_bottom">
+                                <h5 class="card__headers_h5">Ввод данных</h5>
+                            </div>
+                            <div class="relatives">
+                                <input type="text" class="card__input card__transparent-input2"
+                                    placeholder="Обмен по курсу: 1 ВТС = 5 907 982.12 RUB">
+                                <div class="card__loader">5</div>
+                            </div>
+                            <div class="card__inputs">
+                                <div class="relatives">
+                                    <input type="text" class="card__input card__transparent-input2"
+                                        placeholder="Номер карты">
+                                    <div class="card__logo"><img src="/assets/sber.svg" width="24" height="24" />
+                                    </div>
                                 </div>
                                 <div class="relatives">
-                                    <input type="text" class="card__input card__transparent-input"
-                                        placeholder="Обмен по курсу: 1 ВТС = 5 907 982.12 RUB">
-                                    <div class="card__loader">5</div>
-                                </div>
-                                <div class="card__inputs">
-                                    <div class="relatives">
-                                        <input type="text" class="card__input card__transparent-input"
-                                            placeholder="Номер карты">
-                                        <div class="card__logo"><img src="/assets/sber.svg" width="24" height="24" />
-                                        </div>
-                                    </div>
-                                    <div class="relatives">
-                                        <input type="text" class="card__input card__transparent-input"
-                                            placeholder="Email">
-                                        <div class="card__logo"><img src="/assets/icongmail.svg" width="24"
-                                                height="24" /></div>
+                                    <input type="text" class="card__input card__transparent-input2" placeholder="Email">
+                                    <div class="card__logo"><img src="/assets/icongmail.svg" width="24" height="24" />
                                     </div>
                                 </div>
-                                <div class="card__buttons">
-                                    <div class="relatives checkbox">
-                                        <div class="checkmark__input">
-                                            <input type="checkbox" checked="checked" />
-                                            <span class="checkmark"></span>
-                                        </div>
-                                        <p>Я согласен с <span class="card__link">условиями и правилами сервиса</span>
-                                        </p>
+                            </div>
+                            <div class="card__buttons">
+                                <div class="relatives checkbox">
+                                    <div class="checkmark__input">
+                                        <input type="checkbox" checked="checked" />
+                                        <span class="checkmark"></span>
                                     </div>
-                                    <a href="#" class="card__button" id="button">Обменять</a>
+                                    <p>Я согласен с <span class="card__link">условиями и правилами сервиса</span>
+                                    </p>
                                 </div>
+                                <a href="#" class="card__button" id="button">Обменять</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="449" height="416" viewBox="0 0 449 416" fill="none"
             class="section-1__blur section__blurs">
@@ -431,7 +422,7 @@
             <div class="section__content section__contentrow">
                 <div class="section__card card-5">
                     <div class="section__lists section__lists-update">
-                        <div class="section__list section__list-update">
+                        <div class="section__list section__list-update" id="element-1">
                             <img src="/assets/icon-1.svg" class="section__card_logo" width="80" height="80" />
                             <div class="section__desciption">
                                 <h6 class="section__desciption_h6">Самые <span class="selected">низкие</span><br />
@@ -737,7 +728,10 @@
                         <a class="footer__navlinks_a">Преимущества</a>
                         <a class="footer__navlinks_a">Последние обмены</a>
                     </div>
-                    <div class="footer__navlink-button"><a class="card__button" id="button">Обменять</a></div>
+                    <div class="footer__navlink-button footer-pcbutton">
+                        <a class="card__button" id="button">Обменять</a>
+                    </div>
+                    <a class="card__button card__button-footer footer-mbbutton" id="button">Обменять</a>
                 </div>
             </div>
         </div>
