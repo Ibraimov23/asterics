@@ -233,7 +233,8 @@ body {
 .section__windows {
     position: relative;
     display: flex;
-    padding: 40px 24px;
+    padding: 40px 0px;
+    gap: 0px;
 }
 
 .section__window {
@@ -952,6 +953,7 @@ body {
     .navbar__logo img {height: 80px;width: 237px;}
     .navbar__link-indents, .nav-links__darktheme, .navbar__button-indents .register{display: none;}
     .section{padding: 35px 0px 115px;}
+    .section__windows{gap: 15px;}
     .section__headers_h1{font-size: 48px;}
     .section__contentrow {flex-direction: column;}
     .section__lists-update{flex-wrap: wrap;}
