@@ -42,25 +42,29 @@
                         <img src="/assets/lighticon.svg" width="18" height="18" alt="Светлая тема">
                     </div>
                 </div>
-                <div class="hamburger-menu" style="display: none;">
-                    <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu"
-                        aria-label="Toggle navigation">
-                        <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="70" height="60"
-                            viewBox="0 0 50 50">
-                            <g>
-                                <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5" />
-                                <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5" />
-                                <line class="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5" />
-                                <circle class="menuicon__circle" r="23" cx="25" cy="25" />
-                            </g>
-                        </svg>
-                    </a>
-                    <ul class="nav__menu" id="menu" tabindex="-1" aria-label="Main navigation" hidden>
-                        <li class="nav__item"><a href="javascript:menu('#home');" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="javascript:menu('#about');" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="javascript:menu('#rarity');" class="nav__link">Rarity</a></li>
-                        <li class="nav__item"><a href="javascript:menu('#roadmap');" class="nav__link">Roadmap</a></li>
-                    </ul>
+                <div class="hamburger">
+                    <div class="navbar__nav-links"><a href="#about" class="navbar__nav-links_a button"
+                            id="button">Войти</a></div>
+                    <div class="hamburger-menu">
+                        <input id="menu__toggle" type="checkbox" />
+                        <label class="menu__btn" for="menu__toggle">
+                            <span></span>
+                        </label>
+                        <ul class="menu__box">
+                            <li><a class="menu__item" href="#">Обменник</a></li>
+                            <li><a class="menu__item" href="#">О нас</a></li>
+                            <li><a class="menu__item" href="#">Отзывы</a></li>
+                            <li><a class="menu__item" href="#">Офисы</a></li>
+                            <li>
+                                <div class="navbar__nav-links hamburger-links">
+                                    <a href="#about" class="navbar__nav-links_a button register"
+                                        id="button">Регистрация</a>
+                                    <a href="#about" class="navbar__nav-links_a button"
+                                        id="button">Войти</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -138,8 +142,7 @@
                                 <h5 class="card__headers_h5">Получаете</h5>
                             </div>
                             <div class="card__column">
-                                <input type="text" class="card__input card__transparent-input1"
-                                    placeholder="1000">
+                                <input type="text" class="card__input card__transparent-input1" placeholder="1000">
                                 <div class="card__logo align">
                                     <img src="/assets/sber.svg" width="24" height="24" />
                                     <select>
@@ -760,6 +763,7 @@
         const button = document.getElementsByClassName('card__button');
         const window_card = document.getElementsByClassName('window__card');
         const card__button = document.getElementsByClassName('card__button-update');
+        const menu_box = document.getElementsByClassName('menu__box');
 
         function isMobile() {
             return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -781,8 +785,9 @@
                 document.documentElement.style.setProperty('--check-color', 'linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%)');
                 document.documentElement.style.setProperty('--card-filter', 'drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(1) brightness(0.3)');
                 document.documentElement.style.setProperty('--shapes-blend', 'hard-light');
+                document.documentElement.style.setProperty('--dark-blue', '#fff');
                 card__button[0].style.color = '#fff';
-
+                menu_box[0].style.backgroundColor = '#10141F';
             } else {
                 document.documentElement.style.setProperty('--bkg-color', '#F4F5F7');
                 document.documentElement.style.setProperty('--text-color', '#000');
@@ -793,7 +798,9 @@
                 document.documentElement.style.setProperty('--check-color', 'rgba(39, 101, 224, 0.8)');
                 document.documentElement.style.setProperty('--card-filter', 'drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(0) brightness(2)');
                 document.documentElement.style.setProperty('--shapes-blend', 'unset');
+                document.documentElement.style.setProperty('--dark-blue', '#2765E0');
                 card__button[0].style.color = '#2765E0';
+                menu_box[0].style.backgroundColor = '#fff';
             }
         }
     </script>
