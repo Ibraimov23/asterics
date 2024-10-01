@@ -796,6 +796,7 @@
         const icons2 = document.querySelectorAll('.window__card');
         const icons3 = document.getElementsByClassName('white');
         const icons4 = document.getElementsByClassName('dark');
+        const icon5 = document.getElementsByClassName('offlinecard-3');
         let status = 'online';
         /*function isMobile() {
             return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -845,6 +846,7 @@
                 });
                 icons3[0].style.display = 'none';
                 icons4[0].style.display = 'block';
+                if(icon5 != null) {icon5[0].style.backgroundImage = 'url("/assets/windowoffline-2.svg")';}
             } else {
                 document.documentElement.style.setProperty('--bkg-color', '#F4F5F7');
                 document.documentElement.style.setProperty('--text-color', '#000');
@@ -864,10 +866,11 @@
                 }); 
                 icons2.forEach((icon, number) => {
                    
-                    icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;});
+                icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;});
                 
                 icons3[0].style.display = 'block';
                 icons4[0].style.display = 'none';
+                icon5[0].style.backgroundImage = 'url("/assets/windowwhiteoffiline-2.svg")';
             }
         }
     </script>
