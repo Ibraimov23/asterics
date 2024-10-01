@@ -287,10 +287,9 @@ body {
     padding-bottom: 10px;
 }
 
-.section__window .card-3 {
-    background: url(/assets/window-2.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.section__window .card-3, .section__window .offlinecard-3 {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     width: 740px;
     margin: auto;
     padding: 20px 40px;
@@ -298,6 +297,33 @@ body {
     z-index: 1;
     border: 1px solid var(--card-border);
     border-radius: 16px;
+}
+
+.section__window .card-3 {
+    background: url(/assets/window-2.svg);
+}
+.section__window .offlinecard-3 {
+    background: url(/assets/windowoffline-2.svg);
+}
+
+.cards3 {
+    display: none; 
+}
+#online {
+    display: block; 
+}
+.window-navbar__offline, .window-navbar__online  {
+    cursor: pointer;
+}
+
+
+.window__body_p {
+    font-size: 16px;
+    font-weight: 100;
+    color: var(--text-color);
+    padding-top: 20px;
+    padding-bottom: 48px;
+    padding-left: 5px;
 }
 
 .window__setting {
@@ -463,6 +489,7 @@ body {
 }
 
 
+
 .card__transparent-input1,
 .card__transparent-input2 {
     width: 100%;
@@ -479,7 +506,11 @@ body {
 }
 
 .card__transparent-input2 {
-    padding: 26px 8px;
+    padding: 24px 8px;
+    font-size: 16px;
+}
+.card__transparent-input22 {
+    padding: 16px 8px;
     font-size: 16px;
 }
 
@@ -534,7 +565,7 @@ body {
 }
 
 .card__header_bottom {
-    padding-top: 44px;
+    padding-top: 48px;
 }
 
 .card__link {

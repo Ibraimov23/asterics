@@ -161,12 +161,12 @@
                     </div>
                 </div>
                 <div class="section__window">
-                    <div class="window__card card-3">
+                    <div class="window__card card-3 cards3" id="online">
                         <div class="window__navbar">
-                            <div class="window-navbar__online">
+                            <div class="window-navbar__online online" id="onlineS" onclick="updateStatus('Онлайн')">
                                 <p class="window-navbar__text">Онлайн</p>
                             </div>
-                            <div class="window-navbar__offline">
+                            <div class="window-navbar__offline in-office" id="in-officeS" onclick="updateStatus('В офисе')">
                                 <p class="window-navbar__text">В офисе</p>
                             </div>
                         </div>
@@ -192,6 +192,45 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card__buttons">
+                                <div class="relatives checkbox">
+                                    <div class="checkmark__input">
+                                        <input type="checkbox" checked="checked" />
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <p>Я согласен с <span class="card__link">условиями и правилами сервиса</span>
+                                    </p>
+                                </div>
+                                <a href="#" class="card__button" id="button">Обменять</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="window__card offlinecard-3 cards3" id="in-office">
+                        <div class="window__navbar">
+                            <div class="window-navbar__online online" id="onlineS" onclick="updateStatus('Онлайн')">
+                                <p class="window-navbar__text">Онлайн</p>
+                            </div>
+                            <div class="window-navbar__offline in-office" id="in-officeS" onclick="updateStatus('В офисе')">
+                                <p class="window-navbar__text">В офисе</p>
+                            </div>
+                        </div>
+                        <div class="window__body">
+                            <div class="card__header card__header_bottom">
+                                <h5 class="card__headers_h5">Ввод данных</h5>
+                            </div>
+                            <div class="relatives">
+                                <div class="card__inputs">
+                                    <div class="relatives">
+                                        <input type="text" class="card__input card__transparent-input2 card__transparent-input22"
+                                            placeholder="ФИО">
+                                    </div>
+                                    <div class="relatives">
+                                        <input type="text" class="card__input card__transparent-input2 card__transparent-input22" placeholder="Телефон">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="window__body_p">Контрагент с вами свяжется в течение 15 мин.</p>
                             <div class="card__buttons">
                                 <div class="relatives checkbox">
                                     <div class="checkmark__input">
@@ -740,20 +779,6 @@
                 </div>
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="724" height="501" viewBox="0 0 724 501" fill="none"
-            class="footer__blur section__blurs">
-            <g filter="url(#filter0_f_58_806)">
-                <ellipse cx="300.5" cy="305.5" rx="243.5" ry="125.5" fill="#6B55F2" fill-opacity="0.2" />
-            </g>
-            <defs>
-                <filter id="filter0_f_58_806" x="-123" y="0" width="847" height="611" filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                    <feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_58_806" />
-                </filter>
-            </defs>
-        </svg>
     </footer>
     <script>
         const body = document.body;
@@ -771,6 +796,7 @@
         const icons2 = document.querySelectorAll('.window__card');
         const icons3 = document.getElementsByClassName('white');
         const icons4 = document.getElementsByClassName('dark');
+        let status = 'online';
         /*function isMobile() {
             return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
         }
@@ -780,6 +806,22 @@
             document.body.style.display = 'block';
         }*/
         checkbox.checked = true;
+
+        function updateStatus(newStatus) {
+            if (newStatus == 'В офисе') {
+                document.getElementById('online').style.display = 'none';
+                document.getElementById('in-office').style.display = 'block';
+                status = 'offline';
+            }
+            else if(newStatus == 'Онлайн') {
+                document.getElementById('online').style.display = 'block';
+                document.getElementById('in-office').style.display = 'none';
+                status = 'online';
+            }           
+        }
+        
+     
+
         function changeTheme() {
             if (checkbox.checked) {
                 document.documentElement.style.setProperty('--bkg-color', '#10141F');
@@ -821,8 +863,9 @@
                     icon.style.backgroundImage = `url("/assets/buttonwhite-${number}.svg")`;
                 }); 
                 icons2.forEach((icon, number) => {
-                    icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;
-                });
+                   
+                    icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;});
+                
                 icons3[0].style.display = 'block';
                 icons4[0].style.display = 'none';
             }
