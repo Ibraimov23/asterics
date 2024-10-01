@@ -69,7 +69,7 @@
             </nav>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="775" height="278" viewBox="0 0 775 278" fill="none"
-            class="header__glare-links">
+            class="header__glare-links section__blurs">
             <g filter="url(#filter0_f_77_868)">
                 <ellipse cx="387.5" cy="69" rx="237.5" ry="59" fill="#6B55F2" fill-opacity="0.2" />
             </g>
@@ -83,7 +83,7 @@
             </defs>
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg" width="764" height="322" viewBox="0 0 764 322" fill="none"
-            class="header__glare-buttons">
+            class="header__glare-buttons section__blurs">
             <g filter="url(#filter0_f_77_867)">
                 <ellipse cx="382" cy="67" rx="202" ry="75" fill="#6B55F2" fill-opacity="0.2" />
                 <path
@@ -133,7 +133,9 @@
                         </div>
                     </div>
                     <div class="window__setting">
-                        <a class="window__setting_button"><img src="/assets/icon-exchange.svg" width="60" height="60" />
+                        <a class="window__setting_button dark"><img src="/assets/icon-exchange.svg" width="60" height="60" />
+                        </a>
+                        <a class="window__setting_button white"><img src="/assets/icon-exchangewhite.svg" width="60" height="60" />
                         </a>
                     </div>
                     <div class="section__window flex">
@@ -283,7 +285,7 @@
     <section class="section" id="information">
         <div class="container">
             <div class="section__headers">
-                <div class="section__headers_button button-1"></div>
+                <div class="section__headers_button button-1 sec-buttons"></div>
                 <h1 class="section__headers_h1">Как <span class="selected">обменять</span> криптовалюту</h1>
                 <p class="section__headers_p">Надежность в каждом шаге - с нами <span class="selected">легко</span> и
                     <span class="selected">безопасно.</span>
@@ -417,7 +419,7 @@
     <section class="section" id="advantage">
         <div class="container">
             <div class="section__headers">
-                <div class="section__headers_button button-2"></div>
+                <div class="section__headers_button button-2 sec-buttons"></div>
                 <h1 class="section__headers_h1">Наши<span class="selected">преимущества</span></h1>
                 <p class="section__headers_p">Гарантируем <span class="selected">безопасность</span> и <span
                         class="selected">доверие</span> при обмене криптовалют как онлайн, так и офлайн.</p>
@@ -510,7 +512,7 @@
     <section class="section" id="review">
         <div class="container">
             <div class="section__headers">
-                <div class="section__headers_button button-3"></div>
+                <div class="section__headers_button button-3 sec-buttons"></div>
                 <h1 class="section__headers_h1">Ваши<span class="selected"> отзывы</span></h1>
             </div>
             <div class="section__content section__contentrow">
@@ -653,7 +655,7 @@
     <section class="section" id="address">
         <div class="container">
             <div class="section__headers">
-                <div class="section__headers_button button-4"></div>
+                <div class="section__headers_button button-4 sec-buttons"></div>
                 <h1 class="section__headers_h1">Наши<span class="selected"> офисы</span></h1>
             </div>
             <div class="section__content">
@@ -757,6 +759,7 @@
         const body = document.body;
         const a = document.select;
         const shapes = document.getElementsByClassName('shapes');
+        const blurs = document.querySelectorAll('.section__blurs');
         const checkbox = document.getElementById('themeToggle');
         const header = document.getElementsByClassName('header');
         const links = document.querySelectorAll('a');
@@ -764,15 +767,18 @@
         const window_card = document.getElementsByClassName('window__card');
         const card__button = document.getElementsByClassName('card__button-update');
         const menu_box = document.getElementsByClassName('menu__box');
-
-        function isMobile() {
+        const icons = document.querySelectorAll('.sec-buttons');
+        const icons2 = document.querySelectorAll('.window__card');
+        const icons3 = document.getElementsByClassName('white');
+        const icons4 = document.getElementsByClassName('dark');
+        /*function isMobile() {
             return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
         }
         if (isMobile()) {
             alert('В процессе адаптировки для мобильных устроиствах');
         } else {
             document.body.style.display = 'block';
-        }
+        }*/
         checkbox.checked = true;
         function changeTheme() {
             if (checkbox.checked) {
@@ -788,6 +794,15 @@
                 document.documentElement.style.setProperty('--dark-blue', '#fff');
                 card__button[0].style.color = '#fff';
                 menu_box[0].style.backgroundColor = '#10141F';
+                blurs.forEach((blur) => {blur.style.display = 'block';}); 
+                icons.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/button-${number}.svg")`;
+                }); 
+                icons2.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/window-${number}.svg")`;
+                });
+                icons3[0].style.display = 'none';
+                icons4[0].style.display = 'block';
             } else {
                 document.documentElement.style.setProperty('--bkg-color', '#F4F5F7');
                 document.documentElement.style.setProperty('--text-color', '#000');
@@ -801,6 +816,15 @@
                 document.documentElement.style.setProperty('--dark-blue', '#2765E0');
                 card__button[0].style.color = '#2765E0';
                 menu_box[0].style.backgroundColor = '#fff';
+                blurs.forEach((blur) => { blur.style.display = 'none'}); 
+                icons.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/buttonwhite-${number}.svg")`;
+                }); 
+                icons2.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;
+                });
+                icons3[0].style.display = 'block';
+                icons4[0].style.display = 'none';
             }
         }
     </script>

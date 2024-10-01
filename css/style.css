@@ -24,6 +24,8 @@ html {
     --check-color: linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%);
     --shapes-blend: hard-light;
     --dark-blue: #fff;
+    --section-header: 5.5vh;
+    --section-description: 1.4vh
 }
 
 *::-webkit-scrollbar {
@@ -42,6 +44,7 @@ html {
 a {
     color: var(--text-color);
     font-family: sans-serif;
+    cursor: pointer;
 }
 
 .selected {
@@ -76,7 +79,6 @@ body {
     user-select: none;
     background-color: var(--bkg-color);
     color: var(--text-color);
-    display: none;
 }
 
 .container {
@@ -229,6 +231,10 @@ body {
     right: 0;
 }
 
+.hamburger-menu {
+    display: flex;
+}
+
 .section {
     position: relative;
     padding: 60px 0px 140px 0px;
@@ -242,14 +248,14 @@ body {
 }
 
 .section__headers_h1 {
-    font-size: 64px;
+    font-size: var(--section-header);
     letter-spacing: 2px;
     line-height: 1;
     text-align: center;
 }
 
 .section__headers_p {
-    font-size: 16px;
+    font-size: var(--section-description);
     padding-top: 10px;
     text-align: center;
 }
@@ -269,11 +275,11 @@ body {
 }
 
 .section__window .card-1 {
-    background-image: url(/assets/window-1.svg);
+    background-image: url(/assets/window-0.svg);
 }
 
 .section__window .card-2 {
-    background-image: url(/assets/window-2.svg);
+    background-image: url(/assets/window-1.svg);
 }
 
 .card-1 .card__header,
@@ -282,7 +288,7 @@ body {
 }
 
 .section__window .card-3 {
-    background: url(/assets/window-3.svg);
+    background: url(/assets/window-2.svg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 740px;
@@ -301,8 +307,15 @@ body {
     bottom: 114px;
 }
 
+.window__setting .white {
+    display: none;
+}
+
+
 .window__setting_button {
+    position: relative;
     cursor: pointer;
+    z-index: 1;
 }
 
 .window__card {
@@ -634,19 +647,19 @@ body {
 }
 
 .section__headers .button-1 {
-    background: url(/assets/button-1.svg) no-repeat;
+    background: url(/assets/button-0.svg) no-repeat;
 }
 
 .section__headers .button-2 {
-    background: url(/assets/button-2.svg) no-repeat;
+    background: url(/assets/button-1.svg) no-repeat;
 }
 
 .section__headers .button-3 {
-    background: url(/assets/button-3.svg) no-repeat;
+    background: url(/assets/button-2.svg) no-repeat;
 }
 
 .section__headers .button-4 {
-    background: url(/assets/button-4.svg) no-repeat;
+    background: url(/assets/button-3.svg) no-repeat;
     width: 130px !important
 }
 
@@ -745,7 +758,7 @@ body {
 }
 
 .section__desciption-address_p {
-    font-size: 20px;
+    font-size: 1.7vh
 }
 
 .section__lists-update {
@@ -972,7 +985,7 @@ body {
 .shapes {
     background-repeat: no-repeat;
     position: absolute;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     max-width: 550px;
     mix-blend-mode: var(--shapes-blend);
@@ -1108,6 +1121,7 @@ body {
     .hamburger {
         display: flex;
         gap: 20px;
+        align-items: center;
     }
 
     .hamburger-menu input[type="checkbox"]:checked~ {
