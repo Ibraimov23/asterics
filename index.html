@@ -59,8 +59,7 @@
                                 <div class="navbar__nav-links hamburger-links">
                                     <a href="#about" class="navbar__nav-links_a button register"
                                         id="button">Регистрация</a>
-                                    <a href="#about" class="navbar__nav-links_a button"
-                                        id="button">Войти</a>
+                                    <a href="#about" class="navbar__nav-links_a button" id="button">Войти</a>
                                 </div>
                             </li>
                         </ul>
@@ -133,9 +132,11 @@
                         </div>
                     </div>
                     <div class="window__setting">
-                        <a class="window__setting_button dark"><img src="/assets/icon-exchange.svg" width="60" height="60" />
+                        <a class="window__setting_button dark"><img src="/assets/icon-exchange.svg" width="60"
+                                height="60" />
                         </a>
-                        <a class="window__setting_button white"><img src="/assets/icon-exchangewhite.svg" width="60" height="60" />
+                        <a class="window__setting_button white"><img src="/assets/icon-exchangewhite.svg" width="60"
+                                height="60" />
                         </a>
                     </div>
                     <div class="section__window flex">
@@ -166,7 +167,8 @@
                             <div class="window-navbar__online online" id="onlineS" onclick="updateStatus('Онлайн')">
                                 <p class="window-navbar__text">Онлайн</p>
                             </div>
-                            <div class="window-navbar__offline in-office" id="in-officeS" onclick="updateStatus('В офисе')">
+                            <div class="window-navbar__offline in-office" id="in-officeS"
+                                onclick="updateStatus('В офисе')">
                                 <p class="window-navbar__text">В офисе</p>
                             </div>
                         </div>
@@ -205,13 +207,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="window__card offlinecard-3 cards3" id="in-office">
                         <div class="window__navbar">
                             <div class="window-navbar__online online" id="onlineS" onclick="updateStatus('Онлайн')">
                                 <p class="window-navbar__text">Онлайн</p>
                             </div>
-                            <div class="window-navbar__offline in-office" id="in-officeS" onclick="updateStatus('В офисе')">
+                            <div class="window-navbar__offline in-office" id="in-officeS"
+                                onclick="updateStatus('В офисе')">
                                 <p class="window-navbar__text">В офисе</p>
                             </div>
                         </div>
@@ -222,11 +225,14 @@
                             <div class="relatives">
                                 <div class="card__inputs">
                                     <div class="relatives">
-                                        <input type="text" class="card__input card__transparent-input2 card__transparent-input22"
+                                        <input type="text"
+                                            class="card__input card__transparent-input2 card__transparent-input22"
                                             placeholder="ФИО">
                                     </div>
                                     <div class="relatives">
-                                        <input type="text" class="card__input card__transparent-input2 card__transparent-input22" placeholder="Телефон">
+                                        <input type="text"
+                                            class="card__input card__transparent-input2 card__transparent-input22"
+                                            placeholder="Телефон">
                                     </div>
                                 </div>
                             </div>
@@ -760,24 +766,35 @@
             <div class="footer__content">
                 <div class="footer__information">
                     <img src="/assets/logo.svg" width="354" height="116" />
-                    <div class="footer__information-texts">
+                    <div class="footer__information-texts pc">
                         <p class="footer__information_p"><span>© ASTERICS 2024</span><br />
                             Все права защищены</p>
                         <a href="#" class="footer__information_a">Документы</a>
                     </div>
                 </div>
+
                 <div class="footer__links">
-                    <div class="footer__navlinks">
-                        <a class="footer__navlinks_a">Как обменять</a>
-                        <a class="footer__navlinks_a">Преимущества</a>
-                        <a class="footer__navlinks_a">Последние обмены</a>
+                    <div class="footer__newlinks">
+                        <div class="footer__navlinks">
+                            <a class="footer__navlinks_a">Как обменять</a>
+                            <a class="footer__navlinks_a">Преимущества</a>
+                            <a class="footer__navlinks_a">Последние обмены</a>
+                        </div>
+                        <div class="footer__information-texts mobile">
+                            <p class="footer__information_p"><span>© ASTERICS 2024</span><br />
+                                Все права защищены</p>
+                            <a href="#" class="footer__information_a">Документы</a>
+                        </div>
                     </div>
                     <div class="footer__navlink-button footer-pcbutton">
                         <a class="card__button" id="button">Обменять</a>
                     </div>
+
                     <a class="card__button card__button-footer footer-mbbutton" id="button">Обменять</a>
+
                 </div>
             </div>
+        </div>
         </div>
     </footer>
     <script>
@@ -798,14 +815,17 @@
         const icons4 = document.getElementsByClassName('dark');
         const icon5 = document.getElementsByClassName('offlinecard-3');
         let status = 'online';
-        /*function isMobile() {
+        function isMobile() {
             return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
         }
         if (isMobile()) {
-            alert('В процессе адаптировки для мобильных устроиствах');
+            icons2.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/windowmobile-${number}.svg")`;
+                });
+            if (icon5 != null) { icon5[0].style.backgroundImage = 'url("/assets/windowmobileoffline-2.svg")'; }
         } else {
-            document.body.style.display = 'block';
-        }*/
+
+        }
         checkbox.checked = true;
 
         function updateStatus(newStatus) {
@@ -814,14 +834,14 @@
                 document.getElementById('in-office').style.display = 'block';
                 status = 'offline';
             }
-            else if(newStatus == 'Онлайн') {
+            else if (newStatus == 'Онлайн') {
                 document.getElementById('online').style.display = 'block';
                 document.getElementById('in-office').style.display = 'none';
                 status = 'online';
-            }           
+            }
         }
-        
-     
+
+
 
         function changeTheme() {
             if (checkbox.checked) {
@@ -837,16 +857,17 @@
                 document.documentElement.style.setProperty('--dark-blue', '#fff');
                 card__button[0].style.color = '#fff';
                 menu_box[0].style.backgroundColor = '#10141F';
-                blurs.forEach((blur) => {blur.style.display = 'block';}); 
+                blurs.forEach((blur) => { blur.style.display = 'block'; });
                 icons.forEach((icon, number) => {
                     icon.style.backgroundImage = `url("/assets/button-${number}.svg")`;
-                }); 
+                });
                 icons2.forEach((icon, number) => {
                     icon.style.backgroundImage = `url("/assets/window-${number}.svg")`;
                 });
                 icons3[0].style.display = 'none';
                 icons4[0].style.display = 'block';
-                if(icon5 != null) {icon5[0].style.backgroundImage = 'url("/assets/windowoffline-2.svg")';}
+                if (icon5 != null && isMobile()) { icon5[0].style.backgroundImage = 'url("/assets/windowmobileoffline-2.svg")'; }
+                else if (icon5 != null && isMobile() == false) {icon5[0].style.backgroundImage = 'url("/assets/windowoffline-2.svg")';}
             } else {
                 document.documentElement.style.setProperty('--bkg-color', '#F4F5F7');
                 document.documentElement.style.setProperty('--text-color', '#000');
@@ -860,17 +881,19 @@
                 document.documentElement.style.setProperty('--dark-blue', '#2765E0');
                 card__button[0].style.color = '#2765E0';
                 menu_box[0].style.backgroundColor = '#fff';
-                blurs.forEach((blur) => { blur.style.display = 'none'}); 
+                blurs.forEach((blur) => { blur.style.display = 'none' });
                 icons.forEach((icon, number) => {
                     icon.style.backgroundImage = `url("/assets/buttonwhite-${number}.svg")`;
-                }); 
+                });
                 icons2.forEach((icon, number) => {
-                   
-                icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;});
-                
+
+                    icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;
+                });
+
                 icons3[0].style.display = 'block';
                 icons4[0].style.display = 'none';
-                icon5[0].style.backgroundImage = 'url("/assets/windowwhiteoffiline-2.svg")';
+                if (icon5 != null && isMobile()) { icon5[0].style.backgroundImage = 'url("/assets/windowmobileofflinew-2.svg")'; }
+                else if (icon5 != null && isMobile() == false) {icon5[0].style.backgroundImage = 'url("/assets/windowofflinew-2.svg")';}
             }
         }
     </script>

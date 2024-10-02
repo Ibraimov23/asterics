@@ -69,6 +69,10 @@ input:focus {
     outline: none;
 }
 
+.mobile {
+    display: none;
+}
+
 body {
     font-family: sans-serif;
     -webkit-touch-callout: none;
@@ -287,7 +291,8 @@ body {
     padding-bottom: 10px;
 }
 
-.section__window .card-3, .section__window .offlinecard-3 {
+.section__window .card-3,
+.section__window .offlinecard-3 {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     width: 740px;
@@ -302,17 +307,21 @@ body {
 .section__window .card-3 {
     background: url(/assets/window-2.svg);
 }
+
 .section__window .offlinecard-3 {
     background: url(/assets/windowoffline-2.svg);
 }
 
 .cards3 {
-    display: none; 
+    display: none;
 }
+
 #online {
-    display: block; 
+    display: block;
 }
-.window-navbar__offline, .window-navbar__online  {
+
+.window-navbar__offline,
+.window-navbar__online {
     cursor: pointer;
 }
 
@@ -399,6 +408,7 @@ body {
 .card__description_p {
     font-size: 12px;
     padding-left: 5px;
+    padding-right: 5px;
 }
 
 .currency__custom-select {
@@ -509,6 +519,7 @@ body {
     padding: 24px 8px;
     font-size: 16px;
 }
+
 .card__transparent-input22 {
     padding: 16px 8px;
     font-size: 16px;
@@ -799,7 +810,7 @@ body {
 
 .section__list-update {
     position: relative;
-    padding: 25px 20px;
+    padding: 25px;
     flex-direction: column;
     justify-content: unset;
     border: 1px solid var(--card-border);
@@ -997,8 +1008,9 @@ body {
     background-image: url(/assets/shape-2.svg);
     bottom: 0;
     right: 0;
-    top: 40em;
+    top: 25em;
     width: 40vh;
+    background-position: right;
 }
 
 .shape-3 {
@@ -1267,6 +1279,255 @@ body {
     }
 
     .footer-mbbutton {
+        display: none;
+    }
+
+    .pc {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 431px) {
+    :root {
+        --section-description: 14px;
+    }
+
+    .container {
+        max-width: 388px;
+    }
+    .card-1 .card__header .card__headers_h5, .card-2 .card__header .card__headers_h5{
+        text-align: left;
+    }
+    .card-1 .card__column input, .card-2 .card__column input{
+        font-size: 16px;
+        padding: 10px;
+    }
+    .card__logo select {font-size: 16px;}
+    .card__column .card__logo{top: 8px;}
+    .navbar__nav-links .button {
+        padding: 10.5px 28.5px;
+    }
+
+    .navbar__logo img {
+        width: 137px;
+        height: 46px;
+    }
+
+    .hamburger {
+        gap: 0px;
+    }
+
+    .menu__btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu__btn>span {
+        width: 15px;
+    }
+
+    .menu__btn>span::before,
+    .menu__btn>span::after {
+        width: 15px;
+    }
+
+    .menu__btn>span::before {
+        top: -6px;
+    }
+
+    .menu__btn>span::after {
+        top: 6px;
+    }
+
+    .menu__box {
+        padding: 126px 0px;
+    }
+
+    .menu__item {
+        padding-top: 20px;
+        font-size: 16px;
+    }
+
+    .hamburger-links {
+        padding-top: 100px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hamburger-links a {
+        width: 80%;
+        padding: 17px 0px !important;
+        font-size: 16px;
+    }
+
+    /*header*/
+    .section__windows {
+        padding: 50px 0px;
+        flex-direction: column;
+    }
+
+    .card__loader {
+        font-size: 12px;
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--text-selected);
+    }
+
+    .relatives .card__logo {
+        bottom: 20px;
+    }
+
+    .section__window .card-3,
+    .section__window .offlinecard-3 {
+        width: 388px;
+    }
+
+    .card__headers_h5 {
+        padding-bottom: 20px;
+    }
+
+    .card__buttons {
+        padding-top: 20px;
+    }
+
+    .card__transparent-input2 {
+        padding: 21px 8px;
+    }
+
+    .card__inputs {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .card__buttons {
+        flex-direction: column;
+    }
+
+    .card__transparent-input1,
+    .card__transparent-input2 {
+        margin-top: 10px;
+    }
+
+    .window__card {
+        padding: 35px !important;
+        text-align: center;
+        border-radius: 16px;
+        width: 100%;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        min-height: auto;
+    }
+
+    .section__window {
+        padding-top: 0px;
+    }
+
+    .window__setting {
+        bottom: 218px;
+        z-index: 2;
+    }
+
+    .window__setting_button img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cards3 .window__navbar {
+        padding: 0px 25px;
+    }
+    .cards3 {
+        padding: 25px !important;
+    }
+
+    .section__lists {
+        padding-top: 25px;
+    }
+
+    .section__desciption {
+        padding-top: 40px;
+    }
+
+    .section__desciption_h6,
+    .section__card_h5,
+    .card__headers_h5,
+    .card__header_h5 {
+        font-size: 20px;
+    }
+
+    .section__contentrow {
+        padding-top: 50px;
+    }
+
+    .section__desciption_p-update br,
+    .section__desciption_p br,
+    .section__desciption_h6 br,
+    .section__desciption_h6 span br {
+        display: none;
+    }
+
+    .section__desciption_p-update,
+    .section__desciption_p,
+    .section__desciption-address_p,
+    .section__desciption_ul li,
+    .section__list_p,
+    .card__transparent-input2,
+    .card__transparent-input1 {
+        line-height: 120%;
+        font-size: 14px;
+    }
+
+    .section__list-update {
+        flex: 0 0 97.5%;
+    }
+
+    .card__button-update {
+        margin: 50px auto;
+        width: 100%;
+    }
+
+    .section__headers_h1 {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 120%;
+    }
+
+    .footer {
+        padding: 50px 0px;
+    }
+
+    .footer__newlinks {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: end;
+        padding-top: 20px;
+    }
+
+    .footer__links {
+        width: 100%;
+    }
+
+    .footer__content {
+        flex-direction: column;
+    }
+
+    .footer__information {
+        margin: auto;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .shapes, .section__blurs {
         display: none;
     }
 }
