@@ -54,6 +54,33 @@ a {
 .flex {
     display: flex;
 }
+.w-100 {
+    width: 100%;
+}
+.gap-0 {
+    gap: 0px !important;
+}
+
+.mtop-30 {
+    margin-top: 30px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.align-0{
+    align-items: unset !important;
+}
+.column {
+    flex-direction: column;
+}
+
+.center {
+    text-align: center;
+}
+
+.minwidth-350 {
+    min-width: 350px;
+}
 
 .align {
     display: flex;
@@ -1140,6 +1167,69 @@ body {
     background-color: unset;
 }
 
+/*Login-------------------------------------------------------------------------------->*/
+
+.section-link {
+    font-size: 20px;
+    margin-right: auto;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.card__logo-loginp {
+    position: absolute;
+    right: 21px;
+    bottom: 20px;
+}
+
+.card__logo-logine {
+    position: absolute;
+    bottom: 15px;
+    right: 21px;
+}
+
+
+.relatives-login {
+    padding-top: 20px;
+}
+.relatives-selected {
+    color: var(--text-selected);
+}
+.link-register {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card__buttons-register {
+    padding-top: 33px;
+}
+.require-password {
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: 100;
+    color: #CBD0DB;
+}
+
+.card__headers_desc {
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+}
+.card__button-modal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.modal-close {
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-bottom: 30px;
+}
+
 @media only screen and (min-width: 1920px) {
     .container {
         max-width: 1300px;
@@ -1526,8 +1616,17 @@ body {
     .pc {
         display: none;
     }
-
+    .relatives-login {
+        padding-top: 0px;
+    }
     .shapes, .section__blurs {
+        display: none;
+    }
+    .card__headers_desc {
+        font-size: 16px;
+        padding-top: 0px;
+    }
+    .card__headers_desc br {
         display: none;
     }
 }
@@ -1545,3 +1644,4 @@ body {
         max-width: 330px;
     }
 }
+
