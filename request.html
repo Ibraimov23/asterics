@@ -135,6 +135,40 @@
              </div>
         </div>
     </section>
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__information">
+                    <img src="/assets/logo.svg" width="354" height="116" />
+                    <div class="footer__information-texts pc">
+                        <p class="footer__information_p"><span>© ASTERICS 2024</span><br />
+                            Все права защищены</p>
+                        <a href="#" class="footer__information_a">Документы</a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__newlinks">
+                        <div class="footer__navlinks">
+                            <a class="footer__navlinks_a">Как обменять</a>
+                            <a class="footer__navlinks_a">Преимущества</a>
+                            <a class="footer__navlinks_a">Последние обмены</a>
+                        </div>
+                        <div class="footer__information-texts mobile">
+                            <p class="footer__information_p"><span>© ASTERICS 2024</span><br />
+                                Все права защищены</p>
+                            <a href="#" class="footer__information_a">Документы</a>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div class="footer__navlink-button footer-pcbutton">
+                        <a class="card__button" id="button">Обменять</a>
+                    </div>
+                    <a class="card__button card__button-footer footer-mbbutton" id="button">Обменять</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
     <script>
         const body = document.body;
         const a = document.select;
@@ -179,9 +213,6 @@
                 status = 'online';
             }
         }
-
-
-
         function changeTheme() {
             if (checkbox.checked) {
                 document.documentElement.style.setProperty('--bkg-color', '#10141F');
