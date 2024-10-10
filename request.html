@@ -1,0 +1,243 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asterics Request</title>
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/request.css">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+</head>
+
+<body>
+    <header class="header" id="navbar">
+        <div class="container">
+            <nav class="header__navbar" id="nav" aria-label="Main Navigation">
+                <div class="navbar__nav-links navbar__link-indents">
+                    <a href="#home" class="navbar__nav-links_a">Обменник</a>
+                    <a href="#about" class="navbar__nav-links_a">О нас</a>
+                    <a href="#rarity" class="navbar__nav-links_a">Офисы</a>
+                </div>
+                <div class="navbar__logo">
+                    <img class="navbar__logo_img" src="assets/logo.svg" alt="Логотип сайта">
+                </div>
+                <div class="navbar__nav-links navbar__button-indents">
+                    <a href="#home" class="navbar__nav-links_a register">Регистрация</a>
+                    <a href="/login.html" class="navbar__nav-links_a button" id="button">Войти</a>
+                    <div class="nav-links__darktheme" aria-label="Theme switcher">
+                        <img src="/assets/darkicon.svg" width="17" height="17" alt="Темная тема">
+                        <label class="darktheme__switch">
+                            <input type="checkbox" aria-label="Переключить темную тему" onclick="changeTheme()"
+                                id="themeToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <img src="/assets/lighticon.svg" width="18" height="18" alt="Светлая тема">
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <div class="navbar__nav-links"><a href="/login.html" class="navbar__nav-links_a button"
+                            id="button">Войти</a></div>
+                    <div class="hamburger-menu">
+                        <input id="menu__toggle" type="checkbox" />
+                        <label class="menu__btn" for="menu__toggle">
+                            <span></span>
+                        </label>
+                        <ul class="menu__box">
+                            <li><a class="menu__item" href="#">Обменник</a></li>
+                            <li><a class="menu__item" href="#">О нас</a></li>
+                            <li><a class="menu__item" href="#">Отзывы</a></li>
+                            <li><a class="menu__item" href="#">Офисы</a></li>
+                            <li>
+                                <div class="navbar__nav-links hamburger-links">
+                                    <a href="/register.html" class="navbar__nav-links_a button register"
+                                        id="button">Регистрация</a>
+                                    <a href="/login.html" class="navbar__nav-links_a button" id="button">Войти</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="775" height="278" viewBox="0 0 775 278" fill="none"
+            class="header__glare-links section__blurs">
+            <g filter="url(#filter0_f_77_868)">
+                <ellipse cx="387.5" cy="69" rx="237.5" ry="59" fill="#6B55F2" fill-opacity="0.2" />
+            </g>
+            <defs>
+                <filter id="filter0_f_77_868" x="0" y="-140" width="775" height="418" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_77_868" />
+                </filter>
+            </defs>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="764" height="322" viewBox="0 0 764 322" fill="none"
+            class="header__glare-buttons section__blurs">
+            <g filter="url(#filter0_f_77_867)">
+                <ellipse cx="382" cy="67" rx="202" ry="75" fill="#6B55F2" fill-opacity="0.2" />
+                <path
+                    d="M583.5 67C583.5 77.159 577.956 86.8985 567.796 95.8176C557.636 104.736 542.906 112.79 524.662 119.564C488.176 133.111 437.737 141.5 382 141.5C326.263 141.5 275.824 133.111 239.338 119.564C221.094 112.79 206.364 104.736 196.204 95.8176C186.044 86.8985 180.5 77.159 180.5 67C180.5 56.841 186.044 47.1015 196.204 38.1824C206.364 29.2641 221.094 21.2098 239.338 14.4357C275.824 0.88894 326.263 -7.5 382 -7.5C437.737 -7.5 488.176 0.88894 524.662 14.4357C542.906 21.2098 557.636 29.2641 567.796 38.1824C577.956 47.1015 583.5 56.841 583.5 67Z"
+                    stroke="black" />
+            </g>
+            <defs>
+                <filter id="filter0_f_77_867" x="0" y="-188" width="764" height="510" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_77_867" />
+                </filter>
+            </defs>
+        </svg>
+    </header>
+    <section class="section" id="exchange">
+        <div class="container">
+            <div class="zayvka_box">
+                <div class="zayvka_box__text_up">
+                   <p class="number_of_zakaz">Заявка №172854788</p>
+                   <p class="subtitle_smal gray">06 октября 2024, 11:30</p>
+                </div>
+                <div class="zayvka_box__time_block">
+                   <img class="time_animation" src="/assets/timeIcon.svg" alt="time_animation">
+                   <div class="text_with_line"> 
+                      <p class="subtitle_smal">Оплатите заявку в течение 27:20</p>    
+                      <div class="line"></div>
+                   </div>
+                </div>
+                <div class="zayvka_box__under_text_wrapper">
+                   <div class="zayvka_box__text_block">
+                      <p class="subtitle_smal">Сумма к оплате</p>
+                      <div class="text_block__box">
+                         <input class="subtitle-input input"  maxlength="20" placeholder="577 259.48" type="text"><span class="subtitle-input valuta"></span>
+                      </div>
+                   </div>
+                   <div class="zayvka_box__text_block">
+                      <p class="subtitle_smal">Номер счета</p>
+                      <div class="text_block__box">
+                         <input class="subtitle-input input"  maxlength="20" placeholder="3HYLqq5JRbWeP54MmkTb5r2KuHifWAqLnv" type="text"><span class="subtitle-input valuta"></span>
+                      </div>
+                   </div>
+                </div>
+                <div class="zayvka_box__buttons">
+                   <div class="btn btn_cansel"><a href="#" class="subtitle subtitle-main">Отменить</a></div>
+                   <div class="btn"><a href="#" class="subtitle">Оплатить</a></div>
+                </div>
+             </div>
+        </div>
+    </section>
+    <script>
+        const body = document.body;
+        const a = document.select;
+        const shapes = document.getElementsByClassName('shapes');
+        const blurs = document.querySelectorAll('.section__blurs');
+        const checkbox = document.getElementById('themeToggle');
+        const header = document.getElementsByClassName('header');
+        const links = document.querySelectorAll('a');
+        const button = document.getElementsByClassName('card__button');
+        const window_card = document.getElementsByClassName('window__card');
+        const subtitle = document.getElementsByClassName('subtitle-main');
+        const menu_box = document.getElementsByClassName('menu__box');
+        const icons = document.querySelectorAll('.sec-buttons');
+        const icons2 = document.querySelectorAll('.window__card');
+        const icons3 = document.getElementsByClassName('white');
+        const icons4 = document.getElementsByClassName('dark');
+        const icon5 = document.getElementsByClassName('offlinecard-3');
+
+        let status = 'online';
+        function isMobile() {
+            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
+        if (isMobile()) {
+            icons2.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/windowmobile-${number}.svg")`;
+                });
+            if (icon5 != null) { icon5[0].style.backgroundImage = 'url("/assets/windowmobileoffline-2.svg")'; }
+        } else {
+
+        }
+        checkbox.checked = true;
+
+        function updateStatus(newStatus) {
+            if (newStatus == 'В офисе') {
+                document.getElementById('online').style.display = 'none';
+                document.getElementById('in-office').style.display = 'block';
+                status = 'offline';
+            }
+            else if (newStatus == 'Онлайн') {
+                document.getElementById('online').style.display = 'block';
+                document.getElementById('in-office').style.display = 'none';
+                status = 'online';
+            }
+        }
+
+
+
+        function changeTheme() {
+            if (checkbox.checked) {
+                document.documentElement.style.setProperty('--bkg-color', '#10141F');
+                document.documentElement.style.setProperty('--text-color', '#fff');
+                document.documentElement.style.setProperty('--header-bkg-color', 'rgba(0, 0, 0, 0.3)');
+                document.documentElement.style.setProperty('--border-color', 'rgba(203, 208, 219, 0.2)');
+                document.documentElement.style.setProperty('--card-border', 'rgba(255, 255, 255, 0.3)');
+                document.documentElement.style.setProperty('--card-bkg', 'linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%)');
+                document.documentElement.style.setProperty('--check-color', 'linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%)');
+                document.documentElement.style.setProperty('--card-filter', 'drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(1) brightness(0.3)');
+                document.documentElement.style.setProperty('--shapes-blend', 'hard-light');
+                document.documentElement.style.setProperty('--dark-blue', '#fff');
+                document.documentElement.style.setProperty('--request-bkg', 'linear-gradient(113.64deg, rgba(133, 173, 255, 0.05) 15.81%, rgba(39, 101, 224, 0.05) 85.39%)');
+                subtitle[0].style.color = '#fff';
+                menu_box[0].style.backgroundColor = '#10141F';
+                blurs.forEach((blur) => { blur.style.display = 'block'; });
+                icons.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/button-${number}.svg")`;
+                });
+                icons2.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/window-${number}.svg")`;
+                });
+                icons3[0].style.display = 'none';
+                icons4[0].style.display = 'block';
+                if (icon5 != null && isMobile()) { icon5[0].style.backgroundImage = 'url("/assets/windowmobileoffline-2.svg")'; }
+                else if (icon5 != null && isMobile() == false) {icon5[0].style.backgroundImage = 'url("/assets/windowoffline-2.svg")';}
+            } else {
+                document.documentElement.style.setProperty('--bkg-color', '#F4F5F7');
+                document.documentElement.style.setProperty('--text-color', '#000');
+                document.documentElement.style.setProperty('--header-bkg-color', 'rgba(255, 255, 255, 0.5)');
+                document.documentElement.style.setProperty('--border-color', '#CBD0DB');
+                document.documentElement.style.setProperty('--card-border', '#CBD0DB');
+                document.documentElement.style.setProperty('--card-bkg', 'rgba(255, 255, 255, 0.5)');
+                document.documentElement.style.setProperty('--check-color', 'rgba(39, 101, 224, 0.8)');
+                document.documentElement.style.setProperty('--card-filter', 'drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(0) brightness(2)');
+                document.documentElement.style.setProperty('--shapes-blend', 'unset');
+                document.documentElement.style.setProperty('--dark-blue', '#2765E0');
+                document.documentElement.style.setProperty('--request-bkg', 'background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))');
+                subtitle[0].style.color = '#2765E0';
+                menu_box[0].style.backgroundColor = '#fff';
+                blurs.forEach((blur) => { blur.style.display = 'none' });
+                icons.forEach((icon, number) => {
+                    icon.style.backgroundImage = `url("/assets/buttonwhite-${number}.svg")`;
+                });
+                icons2.forEach((icon, number) => {
+
+                    icon.style.backgroundImage = `url("/assets/windowwhite-${number}.svg")`;
+                });
+
+                icons3[0].style.display = 'block';
+                icons4[0].style.display = 'none';
+                if (icon5 != null && isMobile()) { icon5[0].style.backgroundImage = 'url("/assets/windowmobileofflinew-2.svg")'; }
+                else if (icon5 != null && isMobile() == false) {icon5[0].style.backgroundImage = 'url("/assets/windowofflinew-2.svg")';}
+            }
+        }
+    </script>
+</body>
+
+</html>

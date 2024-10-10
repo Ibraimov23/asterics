@@ -1,0 +1,128 @@
+
+.zayvka_box{
+   display: flex;
+   flex-direction: column;
+   row-gap: 40px;
+   border: 1px solid var(--border-color);
+   border-radius: 16px;
+   background: var(--request-bkg);
+   padding: 40px 60px;
+   width: calc(360px + 420 * (100vw / 1440));
+   margin: 40px auto;
+}
+.zayvka_box__text_up{
+   display: flex;
+   flex-wrap: wrap;
+   column-gap: 10px;
+   justify-content: space-between;
+}
+.number_of_zakaz{
+   color: var(--text-color);
+   font-size: 24px;
+   font-weight: 700;
+}
+.subtitle_smal{
+   color: var(--text-color);
+   font-size: 16px;
+}
+.gray{
+   color: var(--text-color);
+   opacity: 0.5;
+}
+.zayvka_box__time_block{
+   display: flex;
+   column-gap: 12px;
+   align-items: end;
+}
+.text_with_line{
+   display: flex;
+   flex-direction: column;
+   row-gap: 10px;
+   width: 100%;
+}
+.line{
+   height: 8px;
+   width: 100%;
+   background: linear-gradient(to right, rgba(39, 101, 224, 1) 15%, rgba(39, 101, 224, 0.1) 15.5%);
+   border-radius: 4px;
+}
+.zayvka_box__under_text_wrapper{
+   display: flex;
+   flex-direction: column;
+   row-gap: 20px;
+}
+.subtitle-input{
+   font-size: 20px;
+   font-weight: 400;
+   color: var(--text-color);
+}
+.subtitle{
+   font-size: 20px;
+   font-weight: 400;
+   color: var(--main-text-color);
+}
+.subtitle-main {
+   color: var(--text-color);
+}
+.zayvka_box__text_block{
+   display: flex;
+   flex-direction: column;
+   row-gap: 6px;
+}
+.text_block__box{
+   padding: 20px;
+   border: 1px solid rgba(39, 101, 224, 0.1);
+   background: rgba(39, 101, 224, 0.1);
+   border-radius: 20px;
+}
+.zayvka_box__buttons{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: calc(12px + 12 * (100vw/1440));
+}
+.btn{
+   padding: 14.5px 6vw;
+   border-radius: 8px;
+   background: var(--text-selected);
+   text-align: center;
+   border: 1px var(--text-selected) solid;
+}
+.btn:hover{
+   cursor: pointer;
+   animation: btn-animation .6s ease-in-out infinite alternate;
+}
+.btn_cansel{
+   background: unset;
+   border: 1px var(--text-selected) solid;
+}
+.btn_cansel:hover{
+   background: var(--text-selected);
+}
+
+@media (width < 570px) {
+   .zayvka_box{
+     width: 100%;
+     padding: 40px 25px;
+   }
+   .text_block__box{
+      padding: 10px;
+   }
+   .btn{
+      width: 100%;
+      font-size: 12px;
+      padding: 7px;
+   }
+}
+@media (width < 330px) {
+   .zayvka_box{
+     width: 100%;
+     padding: 40px 10px;
+   }
+   .subtitle{
+      font-size: 10px;
+   }
+   .text_block__box{
+      padding: 6px;
+   }
+}

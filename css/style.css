@@ -20,6 +20,7 @@ html {
     --text-selected: #2765E0;
     --card-border: rgba(255, 255, 255, 0.3);
     --card-bkg: linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%);
+    --request-bkg: linear-gradient(113.64deg, rgba(133, 173, 255, 0.05) 15.81%, rgba(39, 101, 224, 0.05) 85.39%);
     --card-filter: drop-shadow(0px 4px 20px rgba(40, 51, 74, 0.08)) blur(12px) contrast(1) brightness(0.3);
     --check-color: linear-gradient(to bottom, rgba(133, 173, 255, 0.15) 0%, rgba(39, 101, 224, 0.15) 100%);
     --shapes-blend: hard-light;
@@ -552,10 +553,14 @@ body {
     font-size: 16px;
 }
 
-.card__transparent-input1::placeholder,
-.card__transparent-input2::placeholder {
-    color: var(--text-color);
-}
+.input{
+    background: none;
+    border: none;
+    outline: none;
+ }
+ input::placeholder {
+     color: var(--text-color);
+ }
 
 .card__transparent-input1:focus {
     color: var(--text-color);
